@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vocabulary</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://firebasestorage.googleapis.com/v0/b/dictionary-f2a01.appspot.com/o/iconhead.png?alt=media&token=f05ca875-530b-4789-a5cf-bae28e490dd8"
+    />
+  </head>
+
+  <body>
+    <script>
+      const searchBtn = document.querySelector(".search-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      const searchBox = document.querySelector(".search-box");
+      const searchInput = document.querySelector("input");
+      const searchData = document.querySelector(".search-data");
+      searchBtn.onclick = () => {
+        searchBox.classList.add("active");
+        searchInput.classList.add("active");
+        searchBtn.classList.add("active");
+        cancelBtn.classList.add("active");
+        if (searchInput.value != "") {
+          searchData.classList.remove("active");
+          searchData.innerHTML = "คุณต้องการค้นหา : ";
+        } else {
+          searchData.innerHTML = "";
+        }
+      };
+      cancelBtn.onclick = () => {
+        searchBox.classList.remove("active");
+        searchInput.classList.remove("active");
+        searchBtn.classList.remove("active");
+        cancelBtn.classList.remove("active");
+        searchData.classList.add("active");
+        searchInput.value = "";
+      };
+    </script>
+    <div id="root"></div>
+  </body>
+</html>
